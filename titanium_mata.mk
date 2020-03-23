@@ -1,7 +1,7 @@
 # Inherit some common TitaniumOS stuff.
 TARGET_GAPPS_ARCH := arm64
 TARGET_INCLUDE_STOCK_ARCORE := true
-TITANIUM_BUILD_TYPE := UNOFFICIAL
+TITANIUM_BUILD_TYPE := OFFICIAL
 
 $(call inherit-product, vendor/titanium/config/common_full_phone.mk)
 
@@ -32,7 +32,7 @@ TARGET_SCREEN_WIDTH := 1312
 
 # Maintainer
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.titanium.maintainer=Ocean'Depth (Maxwell)
+    ro.titanium.maintainer=OceanDepth95028(Maxwell)
 
 # Device identifiers
 PRODUCT_DEVICE := mata
