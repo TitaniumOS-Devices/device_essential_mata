@@ -1,5 +1,9 @@
-# Inherit some common EvolutionX stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit some common TitaniumOS stuff.
+TARGET_GAPPS_ARCH := arm64
+TARGET_INCLUDE_STOCK_ARCORE := true
+TITANIUM_BUILD_TYPE := UNOFFICIAL
+
+$(call inherit-product, vendor/titanium/config/common_full_phone.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 
@@ -7,6 +11,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_n_mr1.mk)
+
+#GApps
+WITH_GAPPS := true
+TARGET_GAPPS_ARCH := arm64
+
 # Enable updating of APEXes
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
@@ -21,17 +30,17 @@ TARGET_RECOVERY_FSTAB := device/essential/mata/rootdir/etc/fstab.mata
 TARGET_SCREEN_HEIGHT := 2560
 TARGET_SCREEN_WIDTH := 1312
 
+# Maintainer
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.titanium.maintainer=Ocean'Depth (Maxwell)
+
 # Device identifiers
 PRODUCT_DEVICE := mata
-PRODUCT_NAME := aosp_mata
+PRODUCT_NAME := titanium_mata
 PRODUCT_BRAND := essential
 PRODUCT_MODEL := PH-1
 PRODUCT_MANUFACTURER := Essential Products
 PRODUCT_RELEASE_NAME := mata
-
-TARGET_GAPPS_ARCH := arm64
-CUSTOM_BUILD_TYPE := UNOFFICIAL
-TARGET_INCLUDE_STOCK_ARCORE := true
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
         PRODUCT_NAME=mata \
